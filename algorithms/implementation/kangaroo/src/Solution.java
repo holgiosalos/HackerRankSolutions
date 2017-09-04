@@ -1,13 +1,23 @@
-import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
+import java.util.Scanner;
 
 public class Solution {
 
-    static String kangaroo(int x1, int v1, int x2, int v2) {
-        // Complete this function
+    private static String kangaroo(int x1, int v1, int x2, int v2) {
+
+        String result;
+        if ((x2 > x1) && (v2 >= v1)) {
+            result = "NO";
+        }
+        else {
+            while (x2 > x1) {
+                x1 += v1;
+                x2 += v2;
+            }
+
+            result = (x2 == x1) ? "YES" : "NO";
+        }
+
+        return result;
     }
 
     public static void main(String[] args) {
